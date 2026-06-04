@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: insta-replicaset
+  labels:
+    app: instaapp-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: instaapp
+  template:
+    metadata:
+      labels:
+        app: instaapp
+    spec:
+      containers:
+      - name: insta-container
+        image: tomcat
+        ports: 
+        - containerPort: 8080 

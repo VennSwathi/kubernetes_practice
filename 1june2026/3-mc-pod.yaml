@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: twitterpod
+  labels:
+    app: twitterapp
+    environment: production
+spec:
+  containers:
+  - name: twittercontainer1
+    image: tomcat
+    ports:
+    - containerPort: 8080
+
+  # - name: twittercontainer2
+  #   image: tomcat
+  #   ports:
+  #   - containerPort: 8080
+
+  # - name: twittercontainer3
+  #   image: tomcat
+  #   ports:
+  #   - containerPort: 8080
+
+  - name: twitter-sidecar-container
+    image: busybox
+    command: ["sh", "-c", "while true; do echo Hello from the sidecar container!; sleep 5; done"]
+    

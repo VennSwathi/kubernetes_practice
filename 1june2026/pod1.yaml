@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fb-pod
+  labels:
+    app: fb-app
+spec:
+  containers:
+  - name: fb-container
+    image: tomcat
+    ports: 
+    - containerPort: 8080
+    
