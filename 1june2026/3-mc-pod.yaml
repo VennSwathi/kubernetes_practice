@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: twittercontainer1
-    image: tomcat
+    image: nginx
     ports:
     - containerPort: 8080
 
@@ -26,4 +26,3 @@ spec:
   - name: twitter-sidecar-container
     image: busybox
     command: ["sh", "-c", "while true; do echo Hello from the sidecar container!; sleep 5; done"]
-    
