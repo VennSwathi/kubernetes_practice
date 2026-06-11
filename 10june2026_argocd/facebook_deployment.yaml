@@ -10,7 +10,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: fb-pod
+      app: fb-app
       env: prod
   template:
     metadata:
